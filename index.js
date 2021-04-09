@@ -3,9 +3,9 @@ const fs = require("fs");
 
 const ReadMe = (answers) => `Professional README.md
 ## Description
-Provide a short description explaining the what, why, and how of your project.${answers.description}
+${answers.description}
 ## License
-The last section of a high-quality README file is the license. This lets other developers know what they can and cannot do with your project. ${answers.License}
+![ISC License](https://img.shields.io/static/v1.svg?label=License&message=${answers.License}&color=yellow)
 ## Installation
 What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running. ${answers.Installation}
 ## Usage
@@ -39,9 +39,10 @@ const promptUser = () => {
         message: 'Provide a brief description of the project:',
       },
       {
-        type: 'input',
+        type: 'list',
         name: 'License',
         message: 'Enter a License:',
+        choices: ["MIT", "APACHE", "ISC"],       
       },
       {
         type: 'input',
